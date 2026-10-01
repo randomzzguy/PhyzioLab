@@ -60,7 +60,7 @@ html.tt *:not(.k),html.tt *::before,html.tt *::after{transition:background-color
 /* hero */
 .hero{padding:calc(130px + env(safe-area-inset-top,0px)) 0 90px;position:relative}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-h1{font-size:clamp(52px,8.4vw,112px)}
+h1{font-size:clamp(48px,6.8vw,88px)}
 h1 .l{display:block;overflow:hidden;padding-bottom:.08em}
 h1 .l i{display:block;font-style:normal;transform:translateY(105%);animation:up .95s cubic-bezier(.2,.8,.2,1) forwards}
 h1 .l:nth-child(2) i{animation-delay:.12s;color:var(--or)}
@@ -113,6 +113,35 @@ h2{font-size:clamp(38px,5.6vw,68px);max-width:12em}
 .arr svg{width:22px;height:22px}
 .row:hover .arr{transform:rotate(-45deg);background:var(--or);border-color:var(--or)}
 
+/* pricing */
+.pricing{padding-top:30px}
+.pricing-head{display:grid;grid-template-columns:1fr .7fr;gap:48px;align-items:end}
+.pricing-head .sub{margin:0}
+.price-group{margin-top:58px}
+.group-title{font-size:clamp(26px,3vw,38px);margin-bottom:24px}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rate-card{background:var(--w);border:1px solid var(--line);border-radius:26px;padding:28px;min-height:172px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s}
+.rate-card:hover{transform:translateY(-5px);border-color:var(--or)}
+.rate-card h4{font-size:22px;line-height:1.12;letter-spacing:-.025em;margin:0 0 22px}
+.amount{color:var(--or);font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.amount small{color:var(--mut);font-size:14px;font-weight:500;letter-spacing:0}
+.rate-card.wide{grid-column:span 3;min-height:0}
+.rate-card.wide .rate-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:center}
+.rate-options{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.rate-options li{display:flex;justify-content:space-between;gap:24px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.rate-options li:last-child{padding-bottom:0;border-bottom:0}
+.rate-options b{white-space:nowrap}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan{position:relative;background:var(--sage);border-radius:30px;padding:32px;overflow:hidden}
+.plan.featured{background:var(--or);color:#000}
+.plan-name{font-size:25px;margin:0 0 8px}
+.plan-price{display:block;font-size:44px;font-weight:800;line-height:1;letter-spacing:-.05em;margin-bottom:30px}
+.plan-list{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.plan-list li{position:relative;padding-left:28px}
+.plan-list li::before{content:"✓";position:absolute;left:0;top:-1px;color:var(--or);font-weight:800}
+.plan.featured .plan-list li::before{color:#000}
+.package-note{color:var(--mut);font-size:14px;margin:18px 0 0}
+
 /* approach */
 .steps{position:relative;margin-top:64px;padding-left:76px;--p:0}
 .steps::before,.steps::after{content:"";z-index:0;position:absolute;left:23px;top:8px;bottom:8px;width:4px;border-radius:4px;background:var(--line)}
@@ -123,6 +152,26 @@ h2{font-size:clamp(38px,5.6vw,68px);max-width:12em}
 .st.in .n{background:var(--or);border-color:var(--or);transform:scale(1.1)}
 .st h3{font-size:34px;margin-bottom:10px}
 .st p{margin:0;color:var(--mut);max-width:32em}
+
+/* about */
+.about{padding-top:90px}
+.about-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:end}
+.eyebrow{display:block;color:var(--or);font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.about-copy{font-size:clamp(20px,2.2vw,28px);line-height:1.45;letter-spacing:-.015em;margin:0}
+.people{margin-top:68px}
+.people-title{font-size:clamp(28px,3.6vw,44px);margin-bottom:28px}
+.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.person{position:relative;background:var(--w);border:1px solid var(--line);border-radius:32px;padding:38px;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.person:hover{transform:translateY(-6px);box-shadow:0 24px 50px var(--sh)}
+.person::after{content:attr(data-initial);position:absolute;right:-8px;top:-28px;color:var(--sage);font-size:150px;font-weight:800;line-height:1;letter-spacing:-.08em;z-index:0;pointer-events:none}
+.person>*{position:relative;z-index:1}
+.person h3{font-size:clamp(34px,4vw,50px);margin-bottom:8px}
+.role{color:var(--or);font-weight:700;margin:0 0 28px}
+.person p{margin:0 0 18px}
+.person p:last-child{margin-bottom:0}
+.beat{font-size:20px;font-weight:700;line-height:1.45}
+.credentials{margin:24px 0;padding:18px 20px;border-left:4px solid var(--or);background:var(--sage);border-radius:0 16px 16px 0}
+.credentials span{display:block}
 
 /* reviews */
 .rev{background:var(--rbg);color:var(--rfg);border-radius:44px;margin:0 16px;padding:100px 0;position:relative;overflow:hidden}
@@ -159,14 +208,19 @@ footer{color:var(--mut);font-size:15px;text-align:center;padding:0 24px 40px}
 
 @media(max-width:860px){
 .links{display:none}
-.hero .wrap,.rev .wrap,.visit{grid-template-columns:1fr}
+.hero .wrap,.pricing-head,.about-intro,.people-grid,.rev .wrap,.visit{grid-template-columns:1fr}
 .hero{padding-bottom:60px}
 .panel{aspect-ratio:1/1;border-radius:32px}
 .row{grid-template-columns:1fr 48px;padding:24px 8px}.row p{grid-column:1;grid-row:2}.row .arr{grid-row:1/3;grid-column:2;width:48px;height:48px}
 section{padding:80px 0}
+.pricing-head{gap:24px}.pricing-head .sub{margin-top:0}.price-grid{grid-template-columns:repeat(2,1fr)}.rate-card.wide{grid-column:span 2}.plan-grid{grid-template-columns:1fr}
 .rev{border-radius:32px;padding:70px 0;margin:0 8px}
 .rev .wrap{gap:28px}
+.about-intro{gap:28px}.people{margin-top:48px}.person{padding:30px}
 .box{padding:28px}
+}
+@media(max-width:560px){
+.price-grid{grid-template-columns:1fr}.rate-card.wide{grid-column:auto}.rate-card.wide .rate-layout{grid-template-columns:1fr}.rate-options li{align-items:baseline}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}h1 .l i{transform:none}.lead,.cta,.panel{opacity:1}.mq div{width:auto}html{scroll-behavior:auto}}
 </style>
@@ -181,7 +235,7 @@ section{padding:80px 0}
 
 <nav id="nav"><div class="wrap">
 <a class="logo" href="#top" aria-label="Phyziolab home">phyzio<b>lab</b></a>
-<div class="links"><a href="#services">Treatments</a><a href="#approach">Approach</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></div>
+<div class="links"><a href="#services">Treatments</a><a href="#pricing">Pricing</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></div>
 <div class="nr">
 <button class="tg" id="tg" role="switch" aria-checked="false" aria-label="Dark mode" type="button"><span class="k"></span>
 <svg class="su" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
@@ -192,7 +246,7 @@ section{padding:80px 0}
 
 <header class="hero" id="top"><div class="wrap">
 <div>
-<h1><span class="l"><i>Play hard.</i></span><span class="l"><i>Recover smart.</i></span></h1>
+<h1><span class="l"><i>Never just recover.</i></span><span class="l"><i>Rebuild beyond baseline.</i></span></h1>
 <p class="lead">Sports physiotherapy in Ipoh. Evidence-based manual therapy and movement analysis, shaped into a treatment plan that fits you.</p>
 <div class="cta">
 <a class="btn p mag" href="tel:+601149562026">Book a session <svg><use href="#a"/></svg></a>
@@ -224,12 +278,111 @@ section{padding:80px 0}
 </div>
 </div></section>
 
+<section class="pricing" id="pricing"><div class="wrap">
+<div class="pricing-head">
+<div class="rv">
+<span class="eyebrow">Services &amp; packages</span>
+<h2>Clear options. No guesswork.</h2>
+</div>
+<p class="sub rv" style="--d:.1s">Choose a single service or a plan built for ongoing recovery and performance.</p>
+</div>
+
+<div class="price-group">
+<h3 class="group-title rv">Individual services</h3>
+<div class="price-grid">
+<article class="rate-card rv"><h4>Consultation</h4><div class="amount">RM30</div></article>
+<article class="rate-card rv" style="--d:.06s"><h4>Physio session</h4><div class="amount">RM100</div></article>
+<article class="rate-card rv" style="--d:.12s"><h4>Cupping</h4><div class="amount">RM50</div></article>
+<article class="rate-card rv"><h4>Ice bath</h4><div class="amount">RM50</div></article>
+<article class="rate-card rv" style="--d:.06s"><h4>Dry needling</h4><div class="amount">RM120</div></article>
+<article class="rate-card rv" style="--d:.12s">
+<h4>Sports massage</h4>
+<ul class="rate-options"><li><span>Full body</span><b>RM140</b></li><li><span>Half body</span><b>RM80</b></li></ul>
+</article>
+<article class="rate-card wide rv">
+<div class="rate-layout">
+<div><h4>Tape application</h4><span class="amount"><small>One body part</small></span></div>
+<ul class="rate-options">
+<li><span>Kinesiology tape</span><b>RM20</b></li>
+<li><span>Rigid sport tape</span><b>RM30</b></li>
+<li><span>Rigid + kinesiology tape</span><b>RM45</b></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+
+<div class="price-group">
+<h3 class="group-title rv">Package plans</h3>
+<div class="plan-grid">
+<article class="plan rv">
+<h4 class="plan-name">Recover Plan</h4>
+<span class="plan-price">RM119</span>
+<ul class="plan-list"><li>1× physio session</li><li>1 ice bath or cupping session</li><li>10% off your next treatment</li></ul>
+</article>
+<article class="plan featured rv" style="--d:.08s">
+<h4 class="plan-name">Performance Plan</h4>
+<span class="plan-price">RM309</span>
+<ul class="plan-list"><li>3× physio sessions</li><li>1 ice bath or cupping session</li><li>15% off your next treatment</li></ul>
+</article>
+<article class="plan rv" style="--d:.16s">
+<h4 class="plan-name">Elite Plan</h4>
+<span class="plan-price">RM599</span>
+<ul class="plan-list"><li>6× physio sessions</li><li>1 ice bath or cupping session</li><li>20% off your next treatment</li></ul>
+</article>
+</div>
+<p class="package-note rv">Package inclusions and discounts are based on the current Phyzio Lab package list.</p>
+</div>
+</div></section>
+
 <section id="approach" style="padding-top:20px"><div class="wrap">
-<h2 class="rv">A plan that follows your data.</h2>
+<h2 class="rv">Our Approach</h2>
 <div class="steps" id="steps">
-<div class="st rv"><span class="n">1</span><h3>Assess</h3><p>We listen to your history and analyse how you move to find what is really driving the problem.</p></div>
-<div class="st rv"><span class="n">2</span><h3>Plan</h3><p>You get a personalised, data-driven treatment plan built around your sport, your body and your goals.</p></div>
-<div class="st rv"><span class="n">3</span><h3>Recover</h3><p>Guided rehab with hands-on care, then prevention work so the injury stays gone.</p></div>
+<div class="st rv"><span class="n">01</span><h3>Listen</h3><p>We start with your story, not just your symptoms.</p></div>
+<div class="st rv"><span class="n">02</span><h3>Assess</h3><p>We look at how you move, what may be contributing to the problem and what matters to you.</p></div>
+<div class="st rv"><span class="n">03</span><h3>Explain</h3><p>No unnecessary jargon. We explain what we’re seeing and what it means.</p></div>
+<div class="st rv"><span class="n">04</span><h3>Plan</h3><p>We work together on a realistic plan based on your goals.</p></div>
+<div class="st rv"><span class="n">05</span><h3>Build</h3><p>Treatment is only one part. We help you build strength, confidence and capacity.</p></div>
+<div class="st rv"><span class="n">06</span><h3>Get You Back</h3><p>Back to running. Back to sport. Back to training. Back to life.</p></div>
+</div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+<div class="about-intro">
+<div class="rv">
+<span class="eyebrow">About Phyzio Lab</span>
+<h2>We’re not just here when something hurts.</h2>
+</div>
+<p class="about-copy rv" style="--d:.1s">Phyzio Lab was built around a simple idea: physiotherapy should not only be about treating injuries, but also understanding movement, building confidence and helping people get back to doing what they love. We’re here for all of it.</p>
+</div>
+
+<div class="people">
+<h3 class="people-title rv">Meet our people.</h3>
+<div class="people-grid">
+<article class="person rv" data-initial="Z">
+<h3>Zahirah</h3>
+<p class="role">Physio. Sports nerd. Says yes too easily.</p>
+<p class="beat">New sport? Sure.<br>New challenge? Let’s go.<br>New environment? We’ll figure it out.</p>
+<p>That’s probably how Phyzio Lab happened too.</p>
+<p>She wanted more freedom to do physio her way — closer to the community, closer to sport and closer to the people she’s working with.</p>
+<p>Five years in and out of clinical settings, working across football, futsal, netball, hockey, cricket, rugby, athletics, swimming and tennis.</p>
+<div class="credentials">
+<span>Dry Needling &amp; Kinesio Taping Practitioner</span>
+<span>Basic &amp; Advanced Sports Massage</span>
+</div>
+<p>ACL rehab enthusiast. People person. Occasionally adventurous for no reason.</p>
+</article>
+
+<article class="person rv" data-initial="A" style="--d:.1s">
+<h3>Aiman</h3>
+<p class="role">Co-Founder. Sports guy. Creative mind.</p>
+<p class="beat">Into football, Jiu-Jitsu and anything that comes with a challenge.</p>
+<p>Quiet but curious. Hardworking, hands-on and always looking to learn something new.</p>
+<p>Usually somewhere behind the scenes creating, editing, building things, solving problems or figuring out how to make an idea actually work.</p>
+<p>Not a physio. Not a coach.</p>
+<p>Just someone who loves sport, enjoys being around people who care about what they do, and somehow ended up helping build Phyzio Lab along the way.</p>
+</article>
+</div>
 </div>
 </div></section>
 
@@ -277,7 +430,7 @@ section{padding:80px 0}
 <h2 class="rv">Ready when you are.</h2>
 <a class="btn p mag rv" href="tel:+601149562026">Call +60 11-4956 2026 <svg><use href="#a"/></svg></a>
 </div></div>
-<footer>&copy; Phyziolab. Sports physiotherapy, Botani Village, Ipoh.</footer>
+<footer>&copy; Phyziolab. Sports physiotherapy, Botani Village, Ipoh.<br>SSM: 202603080911 (IP0623156-D)</footer>
 
 <script>
 (function(){
